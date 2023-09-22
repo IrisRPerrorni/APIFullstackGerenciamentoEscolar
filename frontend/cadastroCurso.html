@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro cursos</title>
+</head>
+<body>
+    <form id="formulario">
+        <div class="mb-3">
+            <label class="form-label" for="nome">Nome:</label>
+            <input class="form-control" type="text" placeholder="Informe o nome do produto" name="nome" id="nome"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descricao">Carga horária:</label>
+            <input class="form-control" type="number" placeholder="Informe a carga horária do curso" name="descricao"
+                id="descricao" min="15" required>
+        </div>
+
+        <button type="submit" onclick="mensagem()"
+            class="btn btn-primary btn-lg m-3 d-grid gap-2 col-4 mx-auto">Cadastrar</button>
+    </form>
+</body>
+</html>

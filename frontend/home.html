@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .custom-mr-3 {
+            margin-right: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <header>
+        <h1>StockZ - Seu Gerenciamento de Estoques</h1>
+        <p>Tudo o que você precisa para o seu gerenciamento de estoque, em um só lugar!</p>
+    </header>
+
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="index.html">Página Inicial</a>
+
+            <div class="navbar-nav ms-auto custom-mr-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Cadastros
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Visualizações
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </div>
+
+        </div>
+    </nav>
+
+    <h1 class="text-center"> Cadastro de Produtos </h1>
+
+
+
+    <form id="formulario">
+        <div class="mb-3">
+            <label class="form-label" for="nome">Nome:</label>
+            <input class="form-control" type="text" placeholder="Informe o nome do produto" name="nome" id="nome"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="descricao">Descrição:</label>
+            <input class="form-control" type="text" placeholder="Informe uma descrição para o produto" name="descricao"
+                id="descricao" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="quantidade">Quantidade:</label>
+            <input class="form-control" type="number" name="quantidade"
+                placeholder="Selecione a quantidade de produto a adicionar" id="quantidade" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="preco">Preço (em reais R$):</label>
+            <input class="form-control" type="number" name="preco" placeholder="R$" step="0.01" min="0.01" id="preco"
+                required>
+        </div>
+
+        <button type="submit" onclick="mensagem()"
+            class="btn btn-primary btn-lg m-3 d-grid gap-2 col-4 mx-auto">Enviar</button>
+    </form>
+
+    <script src="js/buscaProdutos.js"></script>
+    <script src="js/cadastroProdutos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Buscar Produto por ID</h3>
+    
+    <div class="mb-3">
+        <label class="form-label" for="idBusca">ID do Produto:</label>
+        <input class="form-control" type="number" name="idBusca" placeholder="Informe o ID do produto" id="idBusca" required>
+    </div>
+    
+    <button type="button" onclick="buscaProdutoPorId()" class="btn btn-primary btn-lg m-3">Buscar por ID</button>
+
+    <table id="tabelaResultado" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
