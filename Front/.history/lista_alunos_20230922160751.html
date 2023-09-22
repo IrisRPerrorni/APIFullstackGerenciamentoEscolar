@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Alunos</title>
+    <!-- Inclua os links para Bootstrap CSS e jQuery -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Listagem de Alunos</h1>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+                <tbody id="alunosTable">
+                    <!-- Os dados dos alunos serão inseridos aqui usando JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Inclua os scripts do Bootstrap e jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Função para buscar o nome do curso com base no ID do curso
+    async function getCourseName(courseId) {
+        try {
+            const response = await fetch(`http://localhost:8080/cursos/2`); 
+            const data = await response.json();
+            return data.nome || 'N/A';
+        } catch (error) {
+            console.error(`Erro ao buscar o curso com ID ${courseId}:`, error);
+            return 'N/A';
+        }
+    }
+
+    // Use a função fetch para buscar os dados dos alunos
+    fetch('http://localhost:8080/alunos') // Substitua com a URL correta da sua API de alunos
+        .then(response => response.json())
+        .then(async data => {
+            const alunosTable = document.getElementById('alunosTable');
+            for (const aluno of data) {
+                const row = document.createElement('tr');
+                const alunoNome = aluno.nome;
+                const alunoEmail = aluno.email;
+                const courseId = aluno.idCurso;
+                const cursoNome = await getCourseName(courseId);
+
+                row.innerHTML = `
+                    <td>${alunoNome}</td>
+                    <td>${alunoEmail}</td>
+                    <td>${courseId}</td>
+                `;
+                alunosTable.appendChild(row);
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar dados da API:', error);
+        });
+</script>
+
+</body>
+</html>

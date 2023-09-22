@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login e Cadastro</title>
+    <!-- Adicione os links para os estilos Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Página de Login e Cadastro</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="tipoUsuario">Escolha o tipo de usuário:</label>
+                <select class="form-control" id="tipoUsuario">
+                    <option value="aluno">Aluno</option>
+                    <option value="professor">Professor</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+
+        <!-- Formulário de Cadastro de Aluno -->
+        <form id="cadastroAlunoForm" style="display: none;">
+            <!-- Adicione os campos relevantes para o cadastro de aluno -->
+            <button type="submit" class="btn btn-success">Cadastrar Aluno</button>
+        </form>
+
+        <!-- Formulário de Cadastro de Professor -->
+        <form id="cadastroProfessorForm" style="display: none;">
+            <!-- Adicione os campos relevantes para o cadastro de professor -->
+            <button type="submit" class="btn btn-success">Cadastrar Professor</button>
+        </form>
+
+        <div id="links" class="mt-3">
+            <a href="#" id="alunoLink" style="display: none;">Listagem de Alunos</a>
+            <a href="#" id="professorLink" style="display: none;">Listagem de Professores</a>
+            <a href="#" id="cursoLink" style="display: none;">Listagem de Cursos</a>
+        </div>
+    </div>
+
+    <!-- Adicione os scripts JavaScript necessários -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Adicione a lógica de exibição de formulário de cadastro com base na escolha do usuário
+        document.getElementById('tipoUsuario').addEventListener('change', function () {
+            const tipoUsuario = this.value;
+            if (tipoUsuario === 'aluno') {
+                document.getElementById('cadastroAlunoForm').style.display = 'block';
+                document.getElementById('cadastroProfessorForm').style.display = 'none';
+            } else if (tipoUsuario === 'professor') {
+                document.getElementById('cadastroAlunoForm').style.display = 'none';
+                document.getElementById('cadastroProfessorForm').style.display = 'block';
+            } else {
+                document.getElementById('cadastroAlunoForm').style.display = 'none';
+                document.getElementById('cadastroProfessorForm').style.display = 'none';
+            }
+        });
+
+        // Restante do código de redirecionamento permanece o mesmo
+        // ...
+
+    </script>
+</body>
+</html>
