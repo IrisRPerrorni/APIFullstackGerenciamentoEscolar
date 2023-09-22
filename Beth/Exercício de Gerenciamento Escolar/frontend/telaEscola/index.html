@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <title>Escola</title>
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary h-100">
+    <main class="w-100 m-auto form-container">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/5310/5310672.png" class="mb-4" height="60" width="65"/>
+        <h1 class="h3 my-3 fw-normal">Cadastrar aluno</h1>
+        <form id="formaluno">
+            <div class="form-floating">
+                <input type="nome" class="form-control" id="floatingInput" placeholder="digite o nome do aluno"/>
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating">
+                <input type="age" class="form-control" id="floatingInput" placeholder="idade"/>
+                <label for="floatingInput">Idade</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="digite o email do aluno"/>
+                <label for="floatingInput">Email</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2 mt-2">Cadastrar aluno</button>
+        </form>
+
+        <h1 class="h3 my-3 fw-normal">Cadastrar curso</h1>
+        <form id="formcurso">
+            <div class="form-floating">
+                <input type="nome" class="form-control" id="floatingInput" placeholder="digite o nome do curso"/>
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating">
+                <input type="hours" class="form-control" id="floatingInput" placeholder="carga horária"/>
+                <label for="floatingInput">Carga horária</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2 mt-2">Cadastrar curso</button>
+        </form>
+
+        <h1 class="h3 my-3 fw-normal">Cadastrar professor</h1>
+        <form id="formprofessor">
+            <div class="form-floating">
+                <input type="nome" class="form-control" id="floatingInput" placeholder="digite o nome do aluno"/>
+                <label for="floatingInput">Nome</label>
+            </div>
+            <div class="form-floating">
+                <input type="age" class="form-control" id="floatingInput" placeholder="idade"/>
+                <label for="floatingInput">Idade</label>
+            </div>
+            <div class="form-floating">
+                <input type="curso" class="form-control" id="floatingInput" placeholder="digite curso do professor"/>
+                <label for="floatingInput">Curso</label>
+            </div>
+            <div class="form-floating">
+                <input type="salario" class="form-control" id="floatingInput" placeholder="digite salario do professor"/>
+                <label for="floatingInput">Salário</label>
+            </div>
+            <button class="btn btn-primary w-100 py-2 mt-2">Cadastrar professor</button>
+        </form>
+
+        <h1 class="h3 my-3 fw-normal">Ver alunos</h1>
+        <table class="table table-primary w-100">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+            </tr>
+
+            <tbody id="buscaaluno"></tbody>
+        </table>
+
+        <h1 class="h3 my-3 fw-normal">Ver cursos</h1>
+        <table class="table table-primary w-100">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Carga horária</th>
+            </tr>
+
+            <tbody id="buscacurso"></tbody>
+        </table>
+
+        <h1 class="h3 my-3 fw-normal">Ver professores</h1>
+        <table class="table table-primary w-100">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Curso</th>
+                <th>Salário</th>
+            </tr>
+
+            <tbody id="buscaprofessor"></tbody>
+        </table>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
