@@ -1,0 +1,44 @@
+:root{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#opcoes{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-height: 80vh; 
+    overflow-y: auto;
+}
+
+#texto{
+    font-size: 20px;
+}
+
+#form-cadastro-aluno{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Adicione margem inferior para evitar estouro */
+    max-height: 80vh; /* Define uma altura máxima em relação à altura da janela */
+    overflow-y: auto;
+}
+
+#btn-modal-cadastrar{
+    background-color: rgb(43, 57, 213);
+    color: white;
+}
