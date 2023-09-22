@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class MatriculaDTO {
 
-    private Long id;
     private String dataMatricula;
     private Long aluno;
     private Long curso;

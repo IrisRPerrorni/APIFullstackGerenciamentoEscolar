@@ -12,8 +12,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProfessoresDTO {
-
-    private Long id;
     private String nome;
     private String idade;
     private Long curso;

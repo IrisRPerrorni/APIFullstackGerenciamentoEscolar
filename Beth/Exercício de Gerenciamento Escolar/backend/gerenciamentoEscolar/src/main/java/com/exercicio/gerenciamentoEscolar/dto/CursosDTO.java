@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CursosDTO {
 
-    private Long id;
     private String nome;
     private String cargaHoraria;
 }
