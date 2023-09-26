@@ -8,12 +8,14 @@ public class ProfessorDTO implements Serializable {
 
     private String nome;
     private String nome_curso;
+    private String email;
     public ProfessorDTO() {
     }
 
     public ProfessorDTO(Professor obj){
         nome=obj.getNome();
         nome_curso = obj.getCurso().getNome();
+        email=obj.getEmail();
     }
 
     public String getNome() {
@@ -32,4 +34,12 @@ public class ProfessorDTO implements Serializable {
         this.nome_curso = nome_curso;
     }
 
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

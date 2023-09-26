@@ -37,7 +37,7 @@
     fetch('http://localhost:8080/professores')
         .then(response => response.json())
         .then(async data => {
-            const profTable = document.getElementById('profTable');
+            const profTable = document.getElementById('alunosTable');
             for (const professor of data) {
                 const row = document.createElement('tr');
                 const professorNome = professor.nome;

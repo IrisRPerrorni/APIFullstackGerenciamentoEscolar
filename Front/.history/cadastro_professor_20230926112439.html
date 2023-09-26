@@ -81,11 +81,12 @@ document.getElementById("cadastroProfessorForm").addEventListener("submit", func
         salario: salario,
         senha: senha,
         curso: {
-            id: curso
+            id: curso // Supondo que o curso também é um objeto com um campo "id"
         }
     };
 
-    fetch("http://localhost:8080/professores/save", { // Substitua pela URL correta da API
+    // Faça a requisição POST usando fetch
+    fetch("http://localhost:8080/professores", { // Substitua pela URL correta da API
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -95,8 +96,6 @@ document.getElementById("cadastroProfessorForm").addEventListener("submit", func
     .then(response => response.json())
     .then(data => {
         console.log(data);
-        alert("Cadastro realizado com sucesso")
-        window.location.href = 'index.html';
     })
     .catch(error => {
         console.error("Erro ao enviar a requisição:", error);

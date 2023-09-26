@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Professores</title>
+    <title>Listagem de Alunos</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -20,7 +20,7 @@
                         <th>Curso</th>
                     </tr>
                 </thead>
-                <tbody id="profTable">
+                <tbody id="alunosTable">
                 </tbody>
             </table>
         </div>
@@ -34,10 +34,10 @@
 <script>
  
 
-    fetch('http://localhost:8080/professores')
+    fetch('http://localhost:8080/alunos')
         .then(response => response.json())
         .then(async data => {
-            const profTable = document.getElementById('profTable');
+            const alunosTable = document.getElementById('alunosTable');
             for (const professor of data) {
                 const row = document.createElement('tr');
                 const professorNome = professor.nome;
@@ -45,11 +45,11 @@
                 const professorCurso= professor.nome_curso;            
 
                 row.innerHTML = `
-                    <td>${professorNome}</td>
-                    <td>${professorEmail}</td>
-                    <td>${professorCurso}</td>
+                    <td>${professor}</td>
+                    <td>${alunoEmail}</td>
+                    <td>${alunoCurso}</td>
                 `;
-                profTable.appendChild(row);
+                alunosTable.appendChild(row);
             }
         })
         .catch(error => {

@@ -62,48 +62,43 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-document.getElementById("cadastroProfessorForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+    document.getElementById("cadastroProfessorForm").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    // Obtenha os dados do formulário
-    const nome = document.getElementById("nome").value;
-    const idade = parseInt(document.getElementById("idade").value);
-    const email = document.getElementById("email").value;
-    const salario = parseFloat(document.getElementById("salario").value);
-    const senha = document.getElementById("senha").value;
-    const curso = parseInt(document.getElementById("curso").value);
+       
+        const nome = document.getElementById("nome").value;
+        const idade = document.getElementById("idade").value;
+        const email = document.getElementById("email").value;
+        const salario = document.getElementById("salario").value;
+        const senha = document.getElementById("senha").value;
+        const curso = document.getElementById("curso").value;
 
-    // Crie um objeto com os dados no formato esperado pela API
-    const professorData = {
-        nome: nome,
-        idade: idade,
-        email: email,
-        salario: salario,
-        senha: senha,
-        curso: {
-            id: curso
-        }
-    };
+        const data = {
+            nome: nome,
+            idade: idade,
+            email: email,
+            salario: salario,
+            senha: senha,
+            curso: curso
+        };
 
-    fetch("http://localhost:8080/professores/save", { // Substitua pela URL correta da API
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(professorData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        alert("Cadastro realizado com sucesso")
-        window.location.href = 'index.html';
-    })
-    .catch(error => {
-        console.error("Erro ao enviar a requisição:", error);
+
+        fetch("http://localhost:8080/professores", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error("Erro ao enviar a requisição:", error);
+        });
     });
-});
 </script>
-
 
 </body>
 </html>

@@ -1,0 +1,41 @@
+document.getElementById("cadastroProfessorForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Obtenha os dados do formulário
+    const nome = document.getElementById("nome").value;
+    const idade = parseInt(document.getElementById("idade").value);
+    const email = document.getElementById("email").value;
+    const salario = parseFloat(document.getElementById("salario").value);
+    const senha = document.getElementById("senha").value;
+    const curso = parseInt(document.getElementById("curso").value);
+
+    // Crie um objeto com os dados no formato esperado pela API
+    const professorData = {
+        nome: nome,
+        idade: idade,
+        email: email,
+        salario: salario,
+        senha: senha,
+        curso: {
+            id: curso // Supondo que o curso também é um objeto com um campo "id"
+        }
+    };
+
+    // Faça a requisição POST usando fetch
+    fetch("/save", { // Substitua pela URL correta da API
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(professorData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Processar a resposta da API aqui, se necessário
+        console.log(data);
+    })
+    .catch(error => {
+        console.error("Erro ao enviar a requisição:", error);
+    });
+});
+</script>

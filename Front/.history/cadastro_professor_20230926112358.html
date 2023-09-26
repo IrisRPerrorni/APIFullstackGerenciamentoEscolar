@@ -61,7 +61,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
 document.getElementById("cadastroProfessorForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -81,11 +80,12 @@ document.getElementById("cadastroProfessorForm").addEventListener("submit", func
         salario: salario,
         senha: senha,
         curso: {
-            id: curso
+            id: curso // Supondo que o curso também é um objeto com um campo "id"
         }
     };
 
-    fetch("http://localhost:8080/professores/save", { // Substitua pela URL correta da API
+    // Faça a requisição POST usando fetch
+    fetch("/save", { // Substitua pela URL correta da API
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -94,9 +94,8 @@ document.getElementById("cadastroProfessorForm").addEventListener("submit", func
     })
     .then(response => response.json())
     .then(data => {
+        // Processar a resposta da API aqui, se necessário
         console.log(data);
-        alert("Cadastro realizado com sucesso")
-        window.location.href = 'index.html';
     })
     .catch(error => {
         console.error("Erro ao enviar a requisição:", error);

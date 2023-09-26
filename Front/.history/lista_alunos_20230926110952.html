@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Professores</title>
+    <title>Listagem de Alunos</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>Listagem de Professores</h1>
+            <h1>Listagem de Alunos</h1>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -20,7 +20,7 @@
                         <th>Curso</th>
                     </tr>
                 </thead>
-                <tbody id="profTable">
+                <tbody id="alunosTable">
                 </tbody>
             </table>
         </div>
@@ -34,22 +34,22 @@
 <script>
  
 
-    fetch('http://localhost:8080/professores')
+    fetch('http://localhost:8080/alunos')
         .then(response => response.json())
         .then(async data => {
-            const profTable = document.getElementById('profTable');
-            for (const professor of data) {
+            const alunosTable = document.getElementById('alunosTable');
+            for (const aluno of data) {
                 const row = document.createElement('tr');
-                const professorNome = professor.nome;
-                const professorEmail = professor.email;
-                const professorCurso= professor.nome_curso;            
+                const alunoNome = aluno.nome;
+                const alunoEmail = aluno.email;
+                const alunoCurso=a            
 
                 row.innerHTML = `
-                    <td>${professorNome}</td>
-                    <td>${professorEmail}</td>
-                    <td>${professorCurso}</td>
+                    <td>${alunoNome}</td>
+                    <td>${alunoEmail}</td>
+                    <td>${}</td>
                 `;
-                profTable.appendChild(row);
+                alunosTable.appendChild(row);
             }
         })
         .catch(error => {
